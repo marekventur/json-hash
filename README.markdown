@@ -2,11 +2,12 @@
 json-hash is a way to hash json-compatible datam, indendent of it's actuall representation. It aims towards being language and hash-algorithm agnostic and might work with other data structures than the ones created by json (although we make a few assumptions that will only be valid for json)
 
 Goals:
-- Implementation independant
-- Laguage independent
-- Parser independent
-- Representation independant
-- No collison between logically different input values
+
+* Implementation independant
+* Laguage independent
+* Parser independent
+* Representation independant
+* No collison between logically different input values
 
 ## Current support
 
@@ -51,20 +52,32 @@ Those rules are used to hash a data object
 1. Return hash(input?"true":"false")
 
 ### hash(Object): String
-1. stringBuffer = "hash"
-2. [If option "sortObject" is true] Sort object by key (See "Sorting")
-3. For every key/value in input:
-3.1. [If option "normalizeKeyCasing" is true] convert key to lowercase
-3.2. stringBuffer = stringBuffer + ":" + hash(key)
-3.3. stringBuffer = stringBuffer + ":" + hash(value)
-4. Return hash(stringBuffer)
+<ol>
+    <li>stringBuffer = "hash"</li>
+    <li>[If option "sortObject" is true] Sort object by key (See "Sorting")</li>
+    <li>
+        For every key/value in input:
+        <ol>
+            <li>[If option "normalizeKeyCasing" is true] convert key to lowercase</li>
+            <li>stringBuffer = stringBuffer + ":" + hash(key)</li>
+            <li>stringBuffer = stringBuffer + ":" + hash(value)</li>
+        </ol>
+    </li>
+    <li>Return hash(stringBuffer)</li>
+</ol>
 
 ### hash(Array): String
-1. stringBuffer = "array"
-2. [If option "sortArray" is true] Sort array (See "Sorting")
-3. For every element in input
-3.1. stringBuffer = stringBuffer + ":" + hash(elemtent)
-4. Return hash(stringBuffer)
+<ol>
+    <li>stringBuffer = "array"</li>
+    <li>[If option "sortArray" is true] Sort array (See "Sorting")</li>
+    <li>
+        For every element in input
+        <ol>
+            <li>stringBuffer = stringBuffer + ":" + hash(elemtent)</li>
+        </ol>
+    </li>
+    <li>Return hash(stringBuffer)</li>
+</ol>
 
 ### Sort:
 Sort by character, ascending. 
