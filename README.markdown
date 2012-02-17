@@ -81,6 +81,8 @@ For every element in input
 
 ### Sort:
 Sort by character, ascending. 
+
 That means:
+
     "a" < "b" < "c"
     "aa" < "ab"
