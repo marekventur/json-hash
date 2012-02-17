@@ -2,11 +2,11 @@
 json-hash is a way to hash json-compatible datam, indendent of it's actuall representation. It aims towards being language and hash-algorithm agnostic and might work with other data structures than the ones created by json (although we make a few assumptions that will only be valid for json)
 
 Goals:
-* Implementation independant
-* Laguage independent
-* Parser independent
-* Representation independant
-* No collison between logically different input values
+- Implementation independant
+- Laguage independent
+- Parser independent
+- Representation independant
+- No collison between logically different input values
 
 ## Current support
 
