@@ -53,30 +53,30 @@ Those rules are used to hash a data object
 
 ### hash(Object): String
 <ol>
-    <li>stringBuffer = "hash"</li>
-    <li>[If option "sortObject" is true] Sort object by key (See "Sorting")</li>
-    <li>
-        For every key/value in input:
-        <ol>
-            <li>[If option "normalizeKeyCasing" is true] convert key to lowercase</li>
-            <li>stringBuffer = stringBuffer + ":" + hash(key)</li>
-            <li>stringBuffer = stringBuffer + ":" + hash(value)</li>
-        </ol>
-    </li>
-    <li>Return hash(stringBuffer)</li>
+<li>stringBuffer = "hash"</li>
+<li>[If option "sortObject" is true] Sort object by key (See "Sorting")</li>
+<li>
+For every key/value in input:
+<ol>
+<li>[If option "normalizeKeyCasing" is true] convert key to lowercase</li>
+<li>stringBuffer = stringBuffer + ":" + hash(key)</li>
+<li>stringBuffer = stringBuffer + ":" + hash(value)</li>
+</ol>
+</li>
+<li>Return hash(stringBuffer)</li>
 </ol>
 
 ### hash(Array): String
 <ol>
-    <li>stringBuffer = "array"</li>
-    <li>[If option "sortArray" is true] Sort array (See "Sorting")</li>
-    <li>
-        For every element in input
-        <ol>
-            <li>stringBuffer = stringBuffer + ":" + hash(elemtent)</li>
-        </ol>
-    </li>
-    <li>Return hash(stringBuffer)</li>
+<li>stringBuffer = "array"</li>
+<li>[If option "sortArray" is true] Sort array (See "Sorting")</li>
+<li>
+For every element in input
+<ol>
+<li>stringBuffer = stringBuffer + ":" + hash(elemtent)</li>
+</ol>
+</li>
+<li>Return hash(stringBuffer)</li>
 </ol>
 
 ### Sort:
